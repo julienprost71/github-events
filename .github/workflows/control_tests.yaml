@@ -1,32 +1,10 @@
-name: Control Push
-on: push
-jobs:
-  qa:
-    name: Check tests
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout on master
-        uses: actions/checkout@v3
+name: salutation sur un jour quelconque
 
-      - name: Set up Python
-        uses: actions/setup-python@master
-        with:
-          python-version: "3.x"
-
-      - name: Install pytest and flake8
-        run: |
-          pip install pytest
-          pip install flake8
-
-      - name: Run tests
-        run: |
-          pytest
-
-      - name: Run flake8
-        uses: py-actions/flake8@v2
+on: workflow_dispatch
 
 env:
-    DAY_OF_WEEK: Lundi ## Variable d'environnement pour l'ensemble du flux de travail
+  DAY_OF_WEEK: Lundi ## Variable d'environnement pour l'ensemble du flux de travail
+
 jobs:
   greeting_job:
     runs-on: ubuntu-latest
