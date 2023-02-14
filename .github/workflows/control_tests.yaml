@@ -25,8 +25,6 @@ jobs:
       - name: Run flake8
         uses: py-actions/flake8@v2
 
-name: salutation sur un jour quelconque
-on: workflow_dispatch
 env:
     DAY_OF_WEEK: Lundi ## Variable d'environnement pour l'ensemble du flux de travail
 jobs:
